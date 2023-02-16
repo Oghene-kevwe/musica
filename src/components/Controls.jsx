@@ -48,8 +48,6 @@ export const Controls = ({
   const playAnimationRef = useRef();
 
   const repeat = useCallback(() => {
-    console.log("run");
-
     const currentTime = audioElementRef.current.currentTime;
     setTimeProgress(currentTime);
 
