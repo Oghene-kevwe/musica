@@ -63,7 +63,6 @@ export const Controls = ({
   }, [trackList, setTimeProgress, inputElementRef, duration]);
 
   useEffect(() => {
-    console.log("rerenders");
     if (isPlaying) {
       audioElementRef.current.play();
       playAnimationRef.current = requestAnimationFrame(repeat);
