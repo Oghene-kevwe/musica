@@ -1,7 +1,87 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 .remove-scrollbar {
   scrollbar-width: none;
+}
+
+.prevent-scroll {
+  overflow: hidden;
+}
+.imgLinkColor {
+  color: #facd66;
+}
+
+/* Input range - chrome and safari */
+input[type="range"] {
+  --range-progress: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  background: #fdfdfd;
+  width: 100%;
+  height: 2px;
+  cursor: pointer;
+}
+
+/* Input range - firefox */
+input[type="range"]::-moz-range-track {
+  position: relative;
+  background: #ffffff;
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+}
+
+/* played progress length - Chrome & safari*/
+input[type="range"]::before {
+  content: '';
+  height: 6px;
+  background: #facd66;
+  width: var(--range-progress);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* played progress length - firefox */
+input[type="range"]::-moz-range-progress {
+  background: #facd66;
+  height: 6px;
+}
+
+/* slider thumb - chrome and safari */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  border: none;
+  background-color: #facd66;
+  cursor: pointer;
+  position: relative;
+}
+
+/* slider thumb - firefox */
+input[type="range"]::-moz-range-thumb {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: #facd66;
+  cursor: pointer;
+  border: transparent;
+  position: relative;
+}
+
+/* dragging thumb - chrome and safari */
+input[type="range"]:active::-webkit-slider-thumb {
+  transform: scale(1.5);
+}
+
+/* dragging thumb - firefox */
+input[type="range"]:active::-moz-range-thumb {
+  transform: scale(1.5);
 }

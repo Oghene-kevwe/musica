@@ -1,57 +1,97 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
+import {
+  HomeSvg,
+  RadioSvg,
+  ProfileSvg,
+  LogoutSvg,
+  VideoSvg,
+  MusicLibarySvg,
+} from "./SvgComponents";
 
 const data = [
   {
+    id: 1,
     name: "Home",
     pageName: "/",
-    img2: "images/homeunclicked.svg",
-    img1: "images/home.svg",
+    img1: <HomeSvg />,
   },
   {
+    id: 2,
     name: "My collections",
     pageName: "/my-collection",
-    img1: "images/music-library-unclicked.svg",
-    img2: "images/music-library-clicked.svg",
+    img1: <MusicLibarySvg />,
   },
   {
+    id: 3,
     name: "Radio",
-    img1: "images/radio.svg",
+    pageName: "/",
+    img1: <RadioSvg />,
   },
   {
+    id: 4,
     name: "Music videos",
-    img1: "images/video-horizontal.svg",
+    pageName: "/",
+    img1: <VideoSvg />,
   },
   {
+    id: 5,
     name: "Profile",
-    img1: "images/profile.svg",
+    pageName: "/",
+    img1: <ProfileSvg />,
   },
   {
+    id: 6,
     name: "Log out",
-    img1: "images/logout.svg",
+    pageName: "/",
+    img1: <LogoutSvg />,
   },
 ];
 
 export const SideMenuContainer = () => {
+  useEffect(() => {
+    const sideMenu = document.querySelector(".sideMenu");
+    const body = document.getElementById("body");
+
+    // select all links in DOM
+    const linkImgContainer = document.querySelectorAll(".linkImgContainer");
+
+    linkImgContainer.forEach((linkImg) => {
+      linkImg.addEventListener("click", () => {
+        // navigate to a page
+        sideMenu.style.transform = "translateX(-100%)";
+        body.classList.remove("prevent-scroll");
+
+        // add new color when link is clicked
+        linkImg.classList.add("imgLinkColor");
+
+        // remove new color from other links
+        linkImgContainer.forEach((item) => {
+          if (item !== linkImg) {
+            item.classList.remove("imgLinkColor");
+          }
+        });
+      });
+    });
+  }, []);
+
   return (
-    <aside className=" hidden  absolute top-0 left-0 h-[100vh] w-[90%]  z-20  text-light bg-dark mr-auto ml-auto">
-      <div className=" pt-10 pl-8 flex flex-col gap-y-10">
+    <aside className="sideMenu absolute  top-0 left-0 h-[100vh] w-full -translate-x-[100%]  z-20  text-light bg-dark mr-auto ml-auto">
+      <div className=" pt-6 pl-8 flex flex-col gap-y-8 mt-16">
         {data.map((item, index) => {
-          return <SideMenuPage key={index} {...item} />;
+          const { id, name, img1, pageName } = item;
+          return (
+            <div key={index} className=" flex items-center ">
+              <div className="linkImgContainer flex gap-x-6 ">
+                {img1}
+                <Link to={pageName} data-id={id}>
+                  {name}
+                </Link>
+              </div>
+            </div>
+          );
         })}
       </div>
     </aside>
-  );
-};
-
-const SideMenuPage = (prop) => {
-  const { name, img1, img2, pageName } = prop;
-  return (
-    <div className=" flex items-center gap-x-6 ">
-      <div>
-        <img src={img1} alt={name} />
-        {/* <img src="images/homeunclicked.svg" alt="" /> */}
-      </div>
-      <Link to={pageName}>{name}</Link>
-    </div>
   );
 };
