@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef } from "react";
 import { FaPlay } from "react-icons/fa";
 import { FaPause } from "react-icons/fa";
 import { FaForward } from "react-icons/fa";
@@ -58,7 +58,7 @@ export const Controls = ({
 
     inputElementRef.current.value = currentTime;
     playAnimationRef.current = requestAnimationFrame(repeat);
-  }, [trackList, setTimeProgress, inputElementRef, duration]);
+  }, [setTimeProgress, inputElementRef,audioElementRef, duration]);
 
   useEffect(() => {
     if (isPlaying) {
@@ -67,7 +67,7 @@ export const Controls = ({
     } else {
       audioElementRef.current.pause();
     }
-  }, [isPlaying, trackIndex, repeat]);
+  }, [isPlaying, trackIndex, repeat,audioElementRef]);
 
   return (
     <div className=" flex w-[80%] mr-auto ml-auto justify-between items-center">

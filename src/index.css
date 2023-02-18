@@ -8,6 +8,10 @@
   scrollbar-width: none;
 }
 
+.thin-scrollbar{
+  scrollbar-width: thin;
+}
+
 .prevent-scroll {
   overflow: hidden;
 }

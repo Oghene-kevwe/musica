@@ -1,13 +1,13 @@
 import { Header } from "../components/Header";
-import { ChartCardContainer } from "../components/Topcharts";
-import { NowPlayingContainer } from "../components/NowPlaying";
+import { TopChartsContainer } from "../components/Topcharts";
 
-export const Homepage = () => {
+export const Homepage = ({ songList, setIsPlaying, setTrackIndex }) => {
   return (
-      <main className=" grid md:grid-cols-2 max-w-4xl mr-auto ml-auto">
-       <Header />
-        <ChartCardContainer />
-      <NowPlayingContainer  />
-      </main>
+    <main>
+      <section className="grid md:grid-cols-2">
+        <Header />
+        <TopChartsContainer {...{ songList, setTrackIndex, setIsPlaying }} />
+      </section>
+    </main>
   );
 };

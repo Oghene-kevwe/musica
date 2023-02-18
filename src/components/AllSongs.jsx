@@ -1,4 +1,8 @@
-export const AllSongsContainer = ({ songList, setTrackIndex,setIsPlaying }) => {
+export const AllSongsContainer = ({
+  songList,
+  setTrackIndex,
+  setIsPlaying,
+}) => {
   return (
     <section className="px-4 grid md:grid-cols-2  gap-y-8  mr-auto ml-auto">
       {songList.data.map((item, index) => {
@@ -6,10 +10,11 @@ export const AllSongsContainer = ({ songList, setTrackIndex,setIsPlaying }) => {
         const { url: songImg } = item.attributes.song_img.data.attributes;
         const imgUrl = `http://localhost:1337${songImg}`;
 
-        function handleClick (){
-          setTrackIndex(index)
-          setIsPlaying(true)
+        function handleClick() {
+          setTrackIndex(index);
+          setIsPlaying(true);
         }
+
         return (
           <button
             onClick={handleClick}

@@ -8,8 +8,9 @@ export const NowPlayingContainer = ({
   trackIndex,
   setIsPlaying,
   isPlaying,
+  setDuration,
+  duration,
 }) => {
-  const [duration, setDuration] = useState(0);
   const [timeProgress, setTimeProgress] = useState(0);
   const audioElementRef = useRef();
   const inputElementRef = useRef();
@@ -41,7 +42,7 @@ export const NowPlayingContainer = ({
   }
 
   return (
-    <section className=" p-4 text-light flex flex-col md:flex-row   gap-4 bg-darkAlt z-10  w-full  ml-auto mr-auto ">
+    <section className=" p-4 text-light flex flex-col md:flex-row gap-4 bg-darkAlt z-10  w-full  ml-auto mr-auto ">
       <audio
         ref={audioElementRef}
         onLoadedMetadata={onLoadMetaData}

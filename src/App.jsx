@@ -12,7 +12,8 @@ function App() {
   const [songList, setSongList] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
-
+  const [trackIndex, setTrackIndex] = useState(0);
+  const [duration, setDuration] = useState(0);
 
   const handleFetch = async () => {
     setLoading(true);
@@ -37,7 +38,7 @@ function App() {
   if (loading) {
     return (
       <main>
-        <div className=" text-white text-6xl grid place-items-center border h-screen">
+        <div className=" text-white text-6xl grid place-items-center  h-screen">
           <h1>Loading...</h1>
         </div>
       </main>
@@ -47,11 +48,53 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<SharedLayout />}>
-          <Route index element={<Homepage {...{songList, isPlaying, setIsPlaying}} />} />
+        <Route
+          path="/"
+          element={
+            <SharedLayout
+              {...{
+                songList,
+                isPlaying,
+                setIsPlaying,
+                trackIndex,
+                setTrackIndex,
+                duration,
+                setDuration,
+              }}
+            />
+          }
+        >
+          <Route
+            index
+            element={
+              <Homepage
+                {...{
+                  songList,
+                  isPlaying,
+                  setIsPlaying,
+                  trackIndex,
+                  setTrackIndex,
+                  duration,
+                  setDuration,
+                }}
+              />
+            }
+          />
           <Route
             path="my-collection"
-            element={<MyCollectionPage {...{songList,isPlaying,setIsPlaying}} />}
+            element={
+              <MyCollectionPage
+                {...{
+                  songList,
+                  isPlaying,
+                  setIsPlaying,
+                  trackIndex,
+                  setTrackIndex,
+                  duration,
+                  setDuration,
+                }}
+              />
+            }
           />
           <Route path="*" element={<ErrorPage />} />
         </Route>
