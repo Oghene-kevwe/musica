@@ -6,7 +6,7 @@ import { SharedLayout } from "./pages/SharedLayout";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const url = "http://localhost:1337/api/music-players?populate=*";
+const url = "https://strapi-production-dcc4.up.railway.app/api/music-players?populate=*";
 
 function App() {
   const [songList, setSongList] = useState([]);
@@ -22,6 +22,7 @@ function App() {
       if (response) {
         setLoading(false);
         setSongList(response);
+        console.log(response);
       }
     } catch (error) {
       if (error) {

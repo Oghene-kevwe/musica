@@ -23,7 +23,7 @@ export const TopChartsContainer = ({
         {topChart.map((item) => {
           const { Artist, Title } = item.attributes;
           const { url: songImg } = item.attributes.song_img.data.attributes;
-          const imgUrl = `http://localhost:1337${songImg}`;
+          const imgUrl = `https://strapi-production-dcc4.up.railway.app${songImg}`;
 
           function handleClick() {
             setTrackIndex(item.id - 1);

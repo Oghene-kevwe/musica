@@ -47,12 +47,12 @@ export const NowPlayingContainer = ({
         ref={audioElementRef}
         onLoadedMetadata={onLoadMetaData}
         onEnded={onEnded}
-        src={`http://localhost:1337${audioUrl}`}
+        src={`https://strapi-production-dcc4.up.railway.app${audioUrl}`}
       ></audio>
       <div className="flex items-center w-[80%] md:w-[40%] gap-x-4 ">
         <div className=" w-20 grid place-items-center ">
           <img
-            src={`http://localhost:1337${imgUrl}`}
+            src={`https://strapi-production-dcc4.up.railway.app${imgUrl}`}
             alt="current track"
             className="w-full object-contain"
           />
