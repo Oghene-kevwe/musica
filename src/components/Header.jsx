@@ -3,7 +3,7 @@
 export const Header = () => {
   return (
     <header className="  px-4 mb-16">
-      <div className=" text-light bg-[#609EAF] p-8 min-h-[70vh]  mr-auto ml-auto rounded-2xl flex flex-col relative">
+      <div className=" text-light bg-[#609EAF] p-8 h-[30rem]   mr-auto ml-auto rounded-2xl flex flex-col relative">
         <div className=" mb-auto flex justify-between item">
           <p className=" opacity-80 ">Curated playlist</p>
           <img

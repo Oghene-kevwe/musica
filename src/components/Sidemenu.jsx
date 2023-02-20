@@ -54,20 +54,20 @@ export const SideMenuContainer = () => {
     const body = document.getElementById("body");
 
     // select all links in DOM
-    const linkImgContainer = document.querySelectorAll(".linkImgContainer");
+    const linksContainer = document.querySelectorAll(".linksContainer");
 
-    linkImgContainer.forEach((linkImg) => {
-      linkImg.addEventListener("click", () => {
+    linksContainer.forEach((link) => {
+      link.addEventListener("click", () => {
         // navigate to a page
         sideMenu.style.transform = "translateX(-100%)";
         body.classList.remove("prevent-scroll");
 
         // add new color when link is clicked
-        linkImg.classList.add("imgLinkColor");
+        link.classList.add("imgLinkColor");
 
         // remove new color from other links
-        linkImgContainer.forEach((item) => {
-          if (item !== linkImg) {
+        linksContainer.forEach((item) => {
+          if (item !== link) {
             item.classList.remove("imgLinkColor");
           }
         });
@@ -82,7 +82,7 @@ export const SideMenuContainer = () => {
           const { id, name, img1, pageName } = item;
           return (
             <div key={index} className=" flex items-center ">
-              <div className="linkImgContainer flex gap-x-6 ">
+              <div className="linksContainer flex gap-x-6 ">
                 {img1}
                 <Link to={pageName} data-id={id}>
                   {name}

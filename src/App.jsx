@@ -8,13 +8,15 @@ import axios from "axios";
 
 const url = "https://strapi-production-dcc4.up.railway.app/api/music-players?populate=*";
 
+
 function App() {
   const [songList, setSongList] = useState([]);
-  const [loading, setLoading] = useState(true);
   const [isPlaying, setIsPlaying] = useState(false);
   const [trackIndex, setTrackIndex] = useState(0);
   const [duration, setDuration] = useState(0);
+  const [loading, setLoading] = useState(true);
 
+  // fetch data
   const handleFetch = async () => {
     setLoading(true);
     try {
@@ -22,12 +24,10 @@ function App() {
       if (response) {
         setLoading(false);
         setSongList(response);
-        console.log(response);
       }
     } catch (error) {
       if (error) {
         setLoading(true);
-        console.log(error.response);
       }
     }
   };
@@ -97,8 +97,8 @@ function App() {
               />
             }
           />
-          <Route path="*" element={<ErrorPage />} />
         </Route>
+          <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
   );

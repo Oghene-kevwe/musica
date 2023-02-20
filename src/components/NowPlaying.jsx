@@ -42,7 +42,7 @@ export const NowPlayingContainer = ({
   }
 
   return (
-    <section className=" p-4 text-light flex flex-col md:flex-row gap-4 bg-darkAlt z-10  w-full  ml-auto mr-auto ">
+    <section className="  p-4 text-light flex flex-col md:flex-row gap-4 bg-darkAlt z-10  w-full  ml-auto mr-auto mt-auto ">
       <audio
         ref={audioElementRef}
         onLoadedMetadata={onLoadMetaData}

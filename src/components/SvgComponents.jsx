@@ -1,7 +1,6 @@
 export const HomeSvg = () => {
   return (
     <svg
-        className="linkImg"
       width="30"
       height="30"
       viewBox="0 0 18 20"
@@ -19,7 +18,6 @@ export const HomeSvg = () => {
 export const MusicLibarySvg = () => {
   return (
     <svg
-    className="linkImg"
       width="30"
       height="30"
       viewBox="0 0 22 22"
@@ -41,7 +39,6 @@ export const MusicLibarySvg = () => {
 export const RadioSvg = () => {
   return (
     <svg
-    className="linkImg"
 
       width="30"
       height="30"
@@ -65,7 +62,6 @@ export const RadioSvg = () => {
 export const VideoSvg = () => {
   return (
     <svg
-    className="linkImg"
 
       width="30"
       height="30"
@@ -129,7 +125,6 @@ export const VideoSvg = () => {
 export const ProfileSvg = () => {
   return (
     <svg
-    className="linkImg"
 
       width="30"
       height="30"
@@ -151,7 +146,6 @@ export const ProfileSvg = () => {
 export const LogoutSvg = () => {
   return (
     <svg
-    className="linkImg"
       width="30"
       height="30"
       viewBox="0 0 20 20"
