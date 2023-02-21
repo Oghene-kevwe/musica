@@ -17,10 +17,8 @@ export const NowPlayingContainer = ({
 
   // destructure data from api
   const { Artist, Title } = songList.data[trackIndex].attributes;
-  const { url: audioUrl } =
-    songList.data[trackIndex].attributes.song.data[0].attributes;
-  const { url: imgUrl } =
-    songList.data[trackIndex].attributes.song_img.data.attributes;
+  const { url: audioUrl } = songList.data[trackIndex].attributes.song.data[0].attributes;
+  const { url: songImg } = songList.data[trackIndex].attributes.song_img.data.attributes;
 
   // set duration of song to max value of input element when track metadata loads
   function onLoadMetaData() {
@@ -47,12 +45,12 @@ export const NowPlayingContainer = ({
         ref={audioElementRef}
         onLoadedMetadata={onLoadMetaData}
         onEnded={onEnded}
-        src={`https://strapi-production-dcc4.up.railway.app${audioUrl}`}
+        src={audioUrl}
       ></audio>
-      <div className="flex items-center w-[80%] md:w-[40%] gap-x-4 ">
+      <div className="flex items-center w-[80%]  md:w-[30%] gap-x-4 ">
         <div className=" w-20 grid place-items-center ">
           <img
-            src={`https://strapi-production-dcc4.up.railway.app${imgUrl}`}
+            src={songImg}
             alt="current track"
             className="w-full object-contain"
           />

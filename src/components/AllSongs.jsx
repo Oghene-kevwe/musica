@@ -8,7 +8,6 @@ export const AllSongsContainer = ({
       {songList.data.map((item, index) => {
         const { Artist, Title } = item.attributes;
         const { url: songImg } = item.attributes.song_img.data.attributes;
-        const imgUrl = `https://strapi-production-dcc4.up.railway.app${songImg}`;
 
         function handleClick() {
           setTrackIndex(index);
@@ -24,7 +23,7 @@ export const AllSongsContainer = ({
             <div className="relative h-full w-full rounded-3xl">
               <div className="absolute  top-0 left-0 opacity-60 rounded-3xl  bg-black w-full h-full"></div>
               <img
-                src={imgUrl}
+                src={songImg}
                 alt={Title}
                 className=" object-cover w-full h-full rounded-3xl"
               />
