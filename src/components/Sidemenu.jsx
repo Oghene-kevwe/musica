@@ -84,7 +84,7 @@ export const SideMenuContainer = () => {
             <div key={index} className=" flex items-center ">
               <div className="linksContainer flex gap-x-6 ">
                 {img1}
-                <Link to={pageName} data-id={id}>
+                <Link to={pageName} data-id={id} className=' hover:text-[#FACD66]'>
                   {name}
                 </Link>
               </div>

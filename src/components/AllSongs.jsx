@@ -21,7 +21,7 @@ export const AllSongsContainer = ({
             className=" relative ml-auto mr-auto rounded-3xl h-60  w-[80%] max-w-[22.5rem] text-light flex flex-col "
           >
             <div className="relative h-full w-full rounded-3xl">
-              <div className="absolute  top-0 left-0 opacity-60 rounded-3xl  bg-black w-full h-full"></div>
+              <div className="absolute  top-0 left-0 opacity-60 hover:opacity-30 rounded-3xl  bg-black w-full h-full"></div>
               <img
                 src={songImg}
                 alt={Title}

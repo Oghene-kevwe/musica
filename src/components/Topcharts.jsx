@@ -19,7 +19,7 @@ export const TopChartsContainer = ({
   return (
     <article className="remove-scrollbar mb-16  px-4 overflow-auto  scroll-smooth ">
       <h3 className=" mb-4 text-2xl text-light">Top charts</h3>
-      <div className="thin-scrollbar overflow-auto md:h-[18rem]  scroll-smooth flex md:flex-col justify-between gap-4">
+      <div className="thin-scrollbar overflow-auto md:h-[18rem] md:gap-y-6 md:py-4 scroll-smooth flex md:flex-col justify-between gap-4">
         {topChart.map((item) => {
           const { Artist, Title } = item.attributes;
           const { url: songImg } = item.attributes.song_img.data.attributes;
@@ -33,7 +33,7 @@ export const TopChartsContainer = ({
             <button
               onClick={handleClick}
               key={item.id}
-              className=" w-64  md:w-full  h-56 md:h-24 shrink-0 text-light  p-4 rounded-2xl flex justify-between gap-y-2 bg-darkAlt"
+              className=" w-64  md:w-full  h-56 md:h-24 shrink-0 text-light  p-4 rounded-2xl flex justify-between gap-y-2 bg-darkAlt hover:text-[#facd66] hover:shadow-sm hover:shadow-[#facd66]"
             >
               <div className=" flex flex-col items-left gap-4 md:flex-row">
                 <img src={songImg} alt={Title} className="w-20 md:w-16" />
