@@ -12,7 +12,7 @@ export const TopChartsContainer = ({
     const randomSongs = newSongList.sort(
       () => 5 - Math.floor(Math.random() * 8)
     );
-    const filteredSongs = randomSongs.slice(0, 3);
+    const filteredSongs = randomSongs.slice(0, 4);
     setTopChart(filteredSongs);
   }, []);
 
@@ -23,7 +23,6 @@ export const TopChartsContainer = ({
         {topChart.map((item) => {
           const { Artist, Title } = item.attributes;
           const { url: songImg } = item.attributes.song_img.data.attributes;
-          const imgUrl = `https://strapi-production-dcc4.up.railway.app${songImg}`;
 
           function handleClick() {
             setTrackIndex(item.id - 1);
@@ -37,7 +36,7 @@ export const TopChartsContainer = ({
               className=" w-64  md:w-full  h-56 md:h-24 shrink-0 text-light  p-4 rounded-2xl flex justify-between gap-y-2 bg-darkAlt"
             >
               <div className=" flex flex-col items-left gap-4 md:flex-row">
-                <img src={imgUrl} alt={Title} className="w-20 md:w-16" />
+                <img src={songImg} alt={Title} className="w-20 md:w-16" />
                 <div className="text-left gap-y-1 flex flex-col md:text-[80%]">
                   <p className=" text-lg md:text-base">{Title}</p>
                   <p className=" opacity-70 capitalize ">{Artist}</p>

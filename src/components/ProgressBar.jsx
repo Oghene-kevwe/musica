@@ -25,8 +25,8 @@ export const ProgressBar = ({
   
 
   return (
-    <div className=" slider-container mr-2">
-      <span>{formatTime(timeProgress)}</span>
+    <div className=" gap-x-4 flex justify-between items-center">
+      <span className=" text-sm">{formatTime(timeProgress)}</span>
       <input
         ref={inputElementRef}
         onChange={handleInputChange}
@@ -34,7 +34,7 @@ export const ProgressBar = ({
         type="range"
         className="range"
       />
-      <span>{formatTime(duration)}</span>
+      <span className=" text-sm">{formatTime(duration)}</span>
     </div>
   );
 };
