@@ -19,7 +19,7 @@ export const TopChartsContainer = ({
   return (
     <article className="remove-scrollbar mb-16  px-4 overflow-auto  scroll-smooth ">
       <h3 className=" mb-4 text-2xl text-light">Top charts</h3>
-      <div className="thin-scrollbar overflow-auto md:h-[18rem] md:gap-y-6 md:py-4 scroll-smooth flex md:flex-col justify-between gap-4">
+      <div className="thin-scrollbar overflow-auto md:h-[18rem] md:gap-y-6 py-4 scroll-smooth flex md:flex-col justify-between gap-4">
         {topChart.map((item) => {
           const { Artist, Title } = item.attributes;
           const { url: songImg } = item.attributes.song_img.data.attributes;
