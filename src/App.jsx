@@ -6,7 +6,7 @@ import { SharedLayout } from "./pages/SharedLayout";
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const url = "https://strapi-production-dcc4.up.railway.app/api/music-players?populate=*";
+const url = "https://strapi-production-dcc4.up.railway.app/api/musicas?populate=*";
 
 
 function App() {
