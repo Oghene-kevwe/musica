@@ -18,12 +18,11 @@ function App() {
 
   // fetch data
   const handleFetch = async () => {
-    setLoading(true);
     try {
       const { data: response } = await axios.get(url);
       if (response) {
-        setLoading(false);
         setSongList(response);
+        setLoading(false);
       }
     } catch (error) {
       if (error) {
